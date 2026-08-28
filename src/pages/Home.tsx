@@ -1,59 +1,9 @@
 import { Link } from "react-router-dom";
 import emailIcon from "../assets/email-icon.svg";
 import githubIcon from "../assets/github-icon.svg";
-import linkedinIcon from "../assets/linkedin-icon.svg";
-
-const socials = [
-  {
-    label: "Email",
-    href: "mailto:jacob@example.com",
-    icon: emailIcon,
-  },
-  {
-    label: "GitHub",
-    href: "https://github.com/JakeFen",
-    icon: githubIcon,
-  },
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/jacob-fenwick/",
-    icon: linkedinIcon,
-  },
-];
-
-// TODO: Added specific projects
-const projects = [
-  {
-    slug: "project-one",
-    photo: "https://placehold.co/400x225",
-    title: "Project One",
-    subtitle:
-      "A short description of what this project does and why it matters.",
-    tools: "React, TypeScript, Tailwind",
-    webHref: "#",
-    githubHref: "#",
-  },
-  {
-    slug: "project-two",
-    photo: "https://placehold.co/400x225",
-    title: "Project Two",
-    subtitle:
-      "A short description of what this project does and why it matters.",
-    tools: "Node.js, Express, PostgreSQL",
-    webHref: "#",
-    githubHref: "#",
-  },
-  {
-    slug: "project-three",
-    photo: "https://placehold.co/400x225",
-    title: "Project Three",
-    subtitle:
-      "A short description of what this project does and why it matters.",
-    tools: "Next.js, Prisma, Tailwind",
-    webHref: "#",
-    githubHref: "#",
-  },
-];
+import resumePdf from "../assets/jf-resume.pdf";
+import { socials } from "../data/socials";
+import { projects } from "../data/projects";
 
 function Home() {
   return (
@@ -91,7 +41,7 @@ function Home() {
         </div>
 
         <a
-          href="#"
+          href={resumePdf}
           target="_blank"
           rel="noopener noreferrer"
           className="rounded-[4px] bg-neutral-900 px-8 py-3 text-base font-medium text-white no-underline transition-colors hover:bg-neutral-700"
