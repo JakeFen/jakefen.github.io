@@ -1,4 +1,14 @@
-export const projects = [
+export interface Project {
+  slug: string;
+  photo: string;
+  title: string;
+  subtitle: string;
+  tools: string;
+  webHref: string;
+  githubHref: string;
+}
+
+export const projects: Project[] = [
   {
     slug: "project-one",
     photo: "https://placehold.co/400x225",

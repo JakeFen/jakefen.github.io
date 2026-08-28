@@ -5,7 +5,7 @@ import linkedinIcon from "../assets/linkedin-icon.svg";
 export const socials = [
   {
     label: "Email",
-    href: "mailto:jacob@example.com",
+    href: "mailto:jacobfenwick111@gmail.com",
     icon: emailIcon,
   },
   {
