@@ -1,21 +1,23 @@
 import { Link } from "react-router-dom";
+import emailIcon from "../assets/email-icon.svg";
+import githubIcon from "../assets/github-icon.svg";
+import linkedinIcon from "../assets/linkedin-icon.svg";
 
-// TODO: Added icons for socials
 const socials = [
   {
     label: "Email",
     href: "mailto:jacob@example.com",
-    icon: "",
+    icon: emailIcon,
   },
   {
     label: "GitHub",
     href: "https://github.com/JakeFen",
-    icon: "",
+    icon: githubIcon,
   },
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/jacob-fenwick/",
-    icon: "",
+    icon: linkedinIcon,
   },
 ];
 
@@ -81,9 +83,9 @@ function Home() {
               target={label === "Email" ? undefined : "_blank"}
               rel={label === "Email" ? undefined : "noopener noreferrer"}
               aria-label={label}
-              className="flex rounded-[4px] border border-neutral-300 p-2.5 text-neutral-700 no-underline transition-colors hover:border-neutral-900 hover:text-neutral-900"
+              className="flex rounded-[4px] border border-neutral-300 p-2 text-neutral-700 no-underline transition-colors hover:border-neutral-900 hover:text-neutral-900"
             >
-              {icon}
+              <img src={icon} alt="" className="h-7 w-7" />
             </a>
           ))}
         </div>
@@ -100,59 +102,64 @@ function Home() {
 
       <hr className="mx-8 border-t border-neutral-200" />
 
-      <section className="grid grid-cols-1 gap-8 px-8 py-16 sm:grid-cols-2 lg:grid-cols-3">
-        {projects.map(
-          ({ slug, photo, title, subtitle, tools, webHref, githubHref }) => (
-            <div key={slug} className="flex flex-col gap-3">
-              <Link to={`/projects/${slug}`}>
-                <img
-                  src={photo}
-                  alt={title}
-                  className="aspect-video w-full rounded-[4px] object-cover"
-                />
-              </Link>
-              <div className="flex flex-col gap-1">
-                <h2 className="m-0 text-lg font-bold text-neutral-900">
-                  {title}
-                </h2>
-                <p className="m-0 text-neutral-600">{subtitle}</p>
-                <p className="m-0 text-sm text-neutral-400">{tools}</p>
+      <section className="px-8 py-16 pb-48">
+        <h2 className="m-0 mb-8 text-2xl font-bold text-neutral-900">
+          Projects
+        </h2>
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {projects.map(
+            ({ slug, photo, title, subtitle, tools, webHref, githubHref }) => (
+              <div key={slug} className="flex flex-col gap-3">
+                <Link to={`/projects/${slug}`}>
+                  <img
+                    src={photo}
+                    alt={title}
+                    className="aspect-video w-full rounded-[4px] object-cover"
+                  />
+                </Link>
+                <div className="flex flex-col gap-1">
+                  <h3 className="m-0 text-lg font-bold text-neutral-900">
+                    {title}
+                  </h3>
+                  <p className="m-0 text-neutral-600">{subtitle}</p>
+                  <p className="m-0 text-sm text-neutral-400">{tools}</p>
+                </div>
+                <div className="flex gap-3">
+                  <a
+                    href={webHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1.5 rounded-[4px] border border-neutral-300 px-3 py-1.5 text-sm text-neutral-700 no-underline transition-colors hover:border-neutral-900 hover:text-neutral-900"
+                  >
+                    <img src={emailIcon} alt="" className="h-4 w-4" />
+                    Web
+                  </a>
+                  <a
+                    href={githubHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1.5 rounded-[4px] border border-neutral-300 px-3 py-1.5 text-sm text-neutral-700 no-underline transition-colors hover:border-neutral-900 hover:text-neutral-900"
+                  >
+                    <img src={githubIcon} alt="" className="h-4 w-4" />
+                    GitHub
+                  </a>
+                </div>
               </div>
-              <div className="flex gap-3">
-                <a
-                  href={webHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 rounded-[4px] border border-neutral-300 px-3 py-1.5 text-sm text-neutral-700 no-underline transition-colors hover:border-neutral-900 hover:text-neutral-900"
-                >
-                  {/* TODO: Web Icon */}
-                  Web
-                </a>
-                <a
-                  href={githubHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 rounded-[4px] border border-neutral-300 px-3 py-1.5 text-sm text-neutral-700 no-underline transition-colors hover:border-neutral-900 hover:text-neutral-900"
-                >
-                  {/* TODO: Github Icon */}
-                  GitHub
-                </a>
-              </div>
-            </div>
-          )
+            )
+          )}
+        </div>
+
+        {projects.length > 3 && (
+          <div className="flex justify-center">
+            <Link
+              to="/projects"
+              className="rounded-[4px] border border-neutral-300 px-6 py-2.5 text-sm font-medium text-neutral-700 no-underline transition-colors hover:border-neutral-900 hover:text-neutral-900"
+            >
+              View All Projects
+            </Link>
+          </div>
         )}
       </section>
-
-      {projects.length > 3 && (
-        <div className="flex justify-center pb-16">
-          <Link
-            to="/projects"
-            className="rounded-[4px] border border-neutral-300 px-6 py-2.5 text-sm font-medium text-neutral-700 no-underline transition-colors hover:border-neutral-900 hover:text-neutral-900"
-          >
-            View All Projects
-          </Link>
-        </div>
-      )}
     </>
   );
 }
