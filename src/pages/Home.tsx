@@ -9,13 +9,10 @@ function Home() {
     <>
       <section className="flex flex-col items-center gap-6 px-8 py-16 text-center">
         <div className="flex flex-col items-center gap-3">
-          <h1 className="m-0 text-3xl font-bold text-neutral-900">
-            Hi, I'm Jacob Fenwick.
+          <h1 className="m-0 max-w-lg text-2xl text-neutral-600">
+            <span className="font-bold">Hi, I'm Jacob Fenwick,</span> a software
+            developer who builds products, tools, and experiences.
           </h1>
-          <p className="m-0 max-w-md text-xl text-neutral-600">
-            I'm a software developer specializing in modern frontend and
-            full-stack web applications.
-          </p>
         </div>
 
         <img
@@ -52,13 +49,13 @@ function Home() {
       <hr className="mx-8 border-t border-neutral-200" />
 
       <section className="px-8 py-16 pb-48">
-        <h2 className="m-0 mb-8 text-2xl font-bold text-neutral-900">
+        <h2 className="m-0 mb-8 text-3xl font-bold text-neutral-900">
           Projects
         </h2>
         <ProjectGrid projects={projects} />
 
         {projects.length > 3 && (
-          <div className="flex justify-center">
+          <div className="mt-8 flex justify-center">
             <Link
               to="/projects"
               className="rounded-[4px] border border-neutral-300 px-6 py-2.5 text-sm font-medium text-neutral-700 no-underline transition-colors hover:border-neutral-900 hover:text-neutral-900"
