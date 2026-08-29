@@ -1,15 +1,7 @@
-import { projects } from "../data/projects";
-import ProjectGrid from "../features/projects/ProjectGrid";
+import ProjectsList from "../features/projects/ProjectsList";
 
 function Projects() {
-  return (
-    <section className="px-8 py-16">
-      <h1 className="m-0 mb-8 text-3xl font-bold text-neutral-900">
-        Projects
-      </h1>
-      <ProjectGrid projects={projects} />
-    </section>
-  );
+  return <ProjectsList />;
 }
 
 export default Projects;

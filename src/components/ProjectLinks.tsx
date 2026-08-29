@@ -1,5 +1,5 @@
-import emailIcon from "../../assets/email-icon.svg";
-import githubIcon from "../../assets/github-icon.svg";
+import emailIcon from "../assets/email-icon.svg";
+import githubIcon from "../assets/github-icon.svg";
 
 function ProjectLinks({
   webHref,
