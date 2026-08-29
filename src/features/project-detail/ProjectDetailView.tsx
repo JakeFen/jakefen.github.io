@@ -23,7 +23,7 @@ function ProjectDetailView({ project }: { project: Project }) {
           <h2 className="m-0 mb-4 text-3xl font-bold text-neutral-900">
             Overview
           </h2>
-          <p className="m-0 text-neutral-600">{description}</p>
+          <p className="m-0 leading-relaxed text-neutral-600">{description}</p>
         </div>
 
         <ProjectInfoCard

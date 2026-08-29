@@ -1,20 +1,21 @@
 import resumePdf from "../../assets/jf-resume.pdf";
+import headShot from "../../assets/head-shot.jpg";
 import { socials } from "../../data/socials";
 
 function HomeHero() {
   return (
     <section className="flex flex-col items-center gap-6 px-8 py-16 text-center">
       <div className="flex flex-col items-center gap-3">
-        <h1 className="m-0 max-w-lg text-2xl text-neutral-600">
-          <span className="font-bold">Hi, I'm Jacob Fenwick,</span> a software
-          developer who builds products, tools, and experiences.
+        <h1 className="m-0 max-w-2xl text-3xl text-neutral-800">
+          <span className="font-bold">Hi, I’m Jacob Fenwick,</span> a software
+          developer with a focus on building products and tools.
         </h1>
       </div>
 
       <img
-        src="https://placehold.co/200x200"
+        src={headShot}
         alt="Jacob Fenwick"
-        className="h-60 w-60 rounded-full object-cover"
+        className="h-75 w-75 rounded-full object-cover"
       />
 
       <div className="flex gap-3">
